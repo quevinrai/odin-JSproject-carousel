@@ -1,0 +1,120 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1280px;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+  /*   background-color: lightblue; */
+  }
+  
+  .carousel {
+    position: relative;
+    width: 100%;
+    height: 75%;
+  /*   background-color: lightyellow; */
+  }
+  
+  .carousel img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+    /* .carousel-img1 {} */
+    .carousel-img2 { z-index: -1; }
+  
+    .animate-show-img {
+      animation: show-img 0.8s both;
+  }
+  
+    .animate-hide-img {
+      animation: hide-img 0.8s both;
+  }
+  
+    @keyframes show-img {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  
+    @keyframes hide-img {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  
+  .carousel p {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  
+  .carousel .carousel-selections {
+    display: flex;
+    gap: 1em;
+    
+    position: absolute;
+    bottom: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style-type: none;
+  }
+  
+    .carousel-selections a {
+      display: inline-block;
+      text-decoration: none;
+      width: 1em;
+      height: 1em;
+      border: 2px solid #fff;
+      border-radius: 50%;
+    }
+  
+    .selected {
+      animation: show-selected 0.8s both;
+    }
+  
+      @keyframes show-selected {
+        100% {
+          background: #fff;
+        }
+      }
+  
+  .carousel .arrow-left {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    padding: 1.5em 1em;
+    color: #fff;
+    transition: background-color 0.2s linear;
+  }
+  
+    .carousel .arrow-left:hover {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+  
+  .carousel .arrow-right {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    padding: 1.5em 1em;
+    color: #fff;
+    transition: background-color 0.2s linear;
+  }
+  
+    .carousel .arrow-right:hover {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+  
+  .hide {
+    display: none;
+  }
